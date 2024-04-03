@@ -1,0 +1,32 @@
+﻿version: '3'
+
+services:
+  # Web server
+  web:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "80:80"
+    depends_on:
+      - db
+    environment:
+      - DB_HOST=db
+      - DB_PORT=3306
+      - DB_NAME=itop
+      - DB_USER=itop_user
+      - DB_PASSWORD=itop_password
+
+  # Database
+  db:
+    image: mariadb:latest
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: your_root_password
+      MYSQL_DATABASE: itop
+      MYSQL_USER: itop_user
+      MYSQL_PASSWORD: itop_password
+    volumes:
+      - ./data:/var/lib/mysql
+
