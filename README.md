@@ -1,10 +1,7 @@
-# Itop_docker
+# Itop
 
 Il y a deux fichier DockerFile et Docker-compose.
-Copier ces deux fichiers dans un meme dossier, puis executer cette ligne de commande :
-```bash
-docker-compose up -d
-```
+Copier ces deux fichiers dans un meme dossier, puis executer cette ligne de commande : `docker-compose up -d`
 
 Vos conteneurs vont se créer, vous pouvez accerder au serveur web d'itop via :
 `http://localhost:80`
@@ -14,3 +11,7 @@ Si vous voulez récuperer le contenu de la base de données ou l'application web
   - Exemple : `docker run --rm --volumes-from itop-web-1 -v C:\temp:/backup busybox tar cvf /backup/backup.tar /var/www/html/itop`
 
 utile pour ajouter des extensiosn à itop : https://store.itophub.io/en_US/taxons/all-extensions
+
+# Netbox
+A faire
+# Plex
