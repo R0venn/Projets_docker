@@ -17,6 +17,8 @@ services:
       - DB_NAME=itop
       - DB_USER=itop_user
       - DB_PASSWORD=itop_password
+    volumes:
+      - web_data:/var/www/html/itop
 
   # Database
   db:
@@ -28,5 +30,13 @@ services:
       MYSQL_USER: itop_user
       MYSQL_PASSWORD: itop_password
     volumes:
-      - ./data:/var/lib/mysql
+      - db_data:/var/lib/mysql
 
+volumes:
+  db_data:
+  web_data:
+
+# data stocker dans \\wsl$\docker-desktop-data\data\docker\volumes\itop_web_data\_data
+# Command pour recuperer la data : docker run --rm --volumes-from itop-web-1 -v C:\Users\alanb\OneDrive\Documents\Docker\itop:/backup busybox tar cvf /backup/backup.tar /var/www/html/itop
+
+# utile pour la suite : https://store.itophub.io/en_US/taxons/all-extensions
