@@ -1,6 +1,6 @@
 # Itop
 
-Il y a deux fichier DockerFile et Docker-compose.
+Il y a deux fichiers DockerFile et Docker-compose.
 Copier ces deux fichiers dans un meme dossier, puis executer cette ligne de commande : `docker-compose up -d`
 
 Vos conteneurs vont se créer, vous pouvez accerder au serveur web d'itop via :
